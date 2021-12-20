@@ -1,0 +1,99 @@
+{
+  "name": "autodial",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.4.3",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@netlify/functions": "^0.7.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "axios": "^0.24.0",
+    "firebase": "^8.6.2",
+    "firebase-admin": "^9.10.0",
+    "firebase-functions": "^3.14.1",
+    "jest-extended": "^0.11.5",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-query": "^3.17.0",
+    "react-scripts": "4.0.3",
+    "shared-library": "file:shared",
+    "ts-loader": "8.2.0",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "netlify": "netlify dev --functions ./functions",
+    "build": "craco build",
+    "test": "npx jest",
+    "test:watch": "npx jest --watch",
+    "eject": "react-scripts eject",
+    "eslint:fix": "eslint --fix src functions"
+  },
+  "jest": {
+    "projects": [
+      {
+        "displayName": "web",
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "resetMocks": true,
+        "moduleNameMapper": {
+          "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg)$": "<rootDir>/src/__mocks__/fileMock.ts"
+        },
+        "setupFilesAfterEnv": [
+          "<rootDir>/src/setupTests.ts"
+        ]
+      },
+      {
+        "displayName": "function",
+        "preset": "ts-jest",
+        "testEnvironment": "node",
+        "resetMocks": true,
+        "roots": [
+          "<rootDir>/functions/"
+        ],
+        "testPathIgnorePatterns": [
+          "<rootDir>/src/"
+        ]
+      }
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node-fetch": "^2.5.10",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.23.4",
+    "firebase-functions-test": "^0.3.0",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.3.4"
+  }
+}
