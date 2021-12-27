@@ -4,8 +4,12 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^4.11.4",
     "@material-ui/lab": "^4.0.0-alpha.58",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/material": "^5.2.5",
     "@netlify/functions": "^0.7.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -31,7 +35,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "netlify": "netlify dev --functions ./functions",
+    "netlify": "netlify dev",
     "build": "craco build",
     "test": "npx jest",
     "test:watch": "npx jest --watch",
